@@ -2,275 +2,288 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>SALDIVAR DIGITAL BOX SAC | Cyber-Tech Elite</title>
-<meta name="description" content="Optimización de hardware, desarrollo web a medida y seguridad digital" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SALDIVAR DIGITAL BOX SAC | Landing Corporativa</title>
+<meta name="description" content="Optimización de hardware, desarrollo web a medida y seguridad digital integrada" />
 <style>
 :root {
-  --bg: #060d1a;
-  --bg-soft: #0f1d31;
-  --card: rgba(20, 36, 58, 0.83);
-  --glass: rgba(11, 20, 34, 0.46);
-  --accent: #00f0ff;
-  --accent-soft: rgba(0, 240, 255, 0.22);
-  --text: #e6edff;
-  --muted: #9aa7c1;
-  --border: rgba(84, 139, 203, 0.36);
+  --bg: #f8fcff;
+  --panel: rgba(255,255,255,0.75);
+  --glass: rgba(250,253,255,0.7);
+  --line: #d8e5f2;
+  --text: #1f2d44;
+  --muted: #6f849f;
+  --accent: #00cffe;
+  --accent-2: #00a7d8;
+  --border: rgba(112,148,184,0.36);
 }
 * { box-sizing: border-box; }
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(180deg, #f8fcff 0%, #eff6fb 100%);
   color: var(--text);
-  background: radial-gradient(circle at 20% 0%, #1a2b47 0%, #07101f 55%, #040a14 100%);
-  overflow-x: hidden;
 }
-img { max-width: 100%; height: auto; display: block; }
 a { color: var(--accent); text-decoration: none; }
 header {
   position: sticky;
   top: 0;
-  z-index: 999;
-  backdrop-filter: blur(11px);
+  z-index: 1000;
+  backdrop-filter: blur(12px);
   background: var(--glass);
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  border-bottom: 1px solid var(--border);
 }
 .navbar {
-  max-width: 1140px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 12px 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 14px 18px;
   gap: 14px;
 }
-.nav-brand { font-size: 1.5rem; font-weight: 900; letter-spacing: 1px; color: #cce6ff; }
+.brand {
+  font-size: clamp(1.2rem, 2.4vw, 2rem);
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #0f243f;
+  text-transform: uppercase;
+  display: inline-block;
+  text-shadow: 0 0 10px rgba(0, 207, 255, 0.35);
+}
 .nav-links {
   display: flex;
-  gap: 14px;
   align-items: center;
+  gap: 12px;
 }
-.nav-links a { font-weight: 600; color: #bbd6ed; padding: 8px 10px; border-radius: 8px; transition: 0.25s ease; }
-.nav-links a:hover { color: #fff; background: rgba(0,240,255,0.14); }
-.btn-cta { background: linear-gradient(120deg, #00f0ff, #0094d2); color: #07121f; border: none; padding: 9px 16px; border-radius: 999px; font-weight: 700; cursor: pointer; }
+.nav-links a { font-weight: 600; color: #35516e; padding: 8px 10px; border-radius: 10px; transition: all .2s ease; }
+.nav-links a:hover { background: rgba(0, 207, 255, 0.18); color: #0d2743; }
+.btn-menu { display: none; background: var(--accent); color: #06182b; border:none; padding: 8px 13px; border-radius: 999px; cursor: pointer; font-weight: 700; }
+main { overflow: hidden; }
+.section { padding: 68px 0; }
+.container { width: min(1160px, 92vw); margin: 0 auto; }
 .hero {
   position: relative;
-  min-height: 92vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 20px;
-  overflow: hidden;
+  min-height: 96vh;
+  padding: 60px 0 40px;
 }
-.hero::before, .hero::after {
-  content: "";
+.hero-lines {
   position: absolute;
   inset: 0;
+  --stroke: rgba(86,138,178,0.25);
+  stroke-width: 2;
 }
-.hero::before {
-  background: linear-gradient(165deg, rgba(2,6,22,0.72), rgba(17,34,56,0.64)),
-              url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-  opacity: 0.90;
-  z-index: 0;
-  filter: brightness(0.56) contrast(1.07);
-}
-.hero::after {
-  background: radial-gradient(circle at 15% 15%, rgba(0,240,255,0.20), transparent 35%),
-              radial-gradient(circle at 85% 28%, rgba(25,180,255,0.16), transparent 36%);
-  mix-blend-mode: screen;
-  z-index: 1;
-}
-.hero-content { position: relative; z-index: 2; max-width: 840px; }
-.hero h1 { margin: 0 0 18px; font-size: clamp(2rem, 5vw, 3.3rem); line-height: 1.15; font-weight: 800; letter-spacing: 0.8px; color: #e0ecff; }
-.hero p { color: var(--muted); font-size: 1.08rem; margin: 0 auto 26px; max-width: 690px; }
-.hero .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-.hero .secondary-btn { border: 1px solid rgba(0, 240, 255, 0.35); border-radius: 999px; padding: 9px 16px; background: rgba(9,18,34,0.36); color: #d6e6ff; font-weight: 600; }
-.section { padding: 72px 0; }
-.section-title { text-align: center; margin-bottom: 28px; color: #d4e3f5; }
-.section-title h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin: 8px 0 10px; letter-spacing: 0.25px; }
-.section-title p { color: var(--muted); max-width: 700px; margin: 0 auto; }
-.grid3 { display: grid; gap: 18px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.grid2 { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 36px rgba(0,0,0,0.28); transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
-.card:hover { transform: translateY(-4px) scale(1.01); border-color: rgba(0, 240, 255, 0.52); box-shadow: 0 16px 46px rgba(0,0,0,0.36); }
-.card-header { position: relative; overflow: hidden; }
-.card-header img { transition: transform .35s ease; }
-.card:hover .card-header img { transform: scale(1.08); }
-.card-content { padding: 18px; }
-.card-content .tag { display: inline-flex; background: rgba(0,240,255,0.14); color: #9df1ff; border-radius: 999px; padding: 5px 14px; font-size: 0.79rem; margin-bottom: 11px; }
-.card-content h3 { margin: 0 0 10px; font-size: 1.15rem; }
-.card-content p { color: #acbdd9; margin: 0; }
-.value-grid { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.footer { border-top: 1px solid rgba(255,255,255,0.08); background: linear-gradient(180deg, #0b1224, #060a15 85%); }
-.footer-content { max-width: 1140px; margin: 0 auto; padding: 24px 18px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; }
-.footer-block { flex: 1 1 250px; }
-.footer-block h4 { margin: 0 0 9px; color: #bfdfff; }
-.footer-block p, .footer-block a { color: #9eb0cc; margin: 5px 0; }
-.footer-bottom { text-align: center; margin-top: 16px; color: #7f94b1; font-size: 0.82rem; }
-.whatsapp-float {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 1005;
-  background: linear-gradient(135deg, #00f0ff, #0094d2);
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+.hero-lines path { stroke: var(--stroke); }
+.hero-content {
+  position: relative;
+  z-index: 2;
   display: grid;
-  place-items: center;
-  text-decoration: none;
-  box-shadow: 0 10px 24px rgba(0, 240, 255, 0.45);
-  transition: transform .25s ease;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 26px;
 }
-.whatsapp-float:hover { transform: scale(1.07); }
-.whatsapp-float span { color: #05101b; font-size: 1.35rem; font-weight: 800; }
-.fade-up { opacity: 0; transform: translateY(20px); transition: opacity .75s ease, transform .75s ease; }
-.fade-up.visible { opacity: 1; transform: translateY(0); }
-@media (max-width: 1100px) { .grid3 { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 860px) { .grid2 { grid-template-columns: 1fr; } .value-grid { grid-template-columns: 1fr; } }
+.hero-text h1 {
+  margin:0;
+  font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+  line-height: 1.05;
+  color: #0d2953;
+}
+.hero-text p {
+  margin: 16px 0 24px;
+  font-size: clamp(1rem,2.2vw,1.25rem);
+  color: #566d89;
+  max-width: 620px;
+}
+.hero-cta { display: inline-flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary, .btn-secondary {
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  padding: 12px 18px;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn-primary { background: linear-gradient(135deg, #00e3ff 0%, #00b1eb 100%); color: #042037; }
+.btn-secondary { background: #f5fbff; color: #236690; border: 1px solid #b8d9f0; }
+.btn-primary:hover, .btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0, 174, 255, .2); }
+.hero-visual {
+  position: relative;
+}
+.cube-wrap {
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+}
+.cube-bg {
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  box-shadow: 0 22px 50px rgba(23,52,92,.22);
+  background: linear-gradient(145deg, #f5faff, #dde8f6);
+  border: 1px solid rgba(132,169,206,0.28);
+}
+.hero-contact {
+  position: absolute;
+  right: 8px;
+  top: 12%;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(84, 133, 173, 0.32);
+  border-radius: 18px;
+  width: 280px;
+  padding: 14px;
+}
+.hero-contact h3 { margin: 0 0 10px; font-size: 1rem; color: #234967; }
+.contact-item { display: flex; align-items: center; gap: 10px; margin: 7px 0; font-size: .95rem; color: #1f3a5b; }
+.contact-item svg { width: 20px; height: 20px; fill: var(--accent); }
+.chip { background: rgba(0, 207, 255, 0.13); color: #11648c; padding: 4px 10px; border-radius: 999px; font-size: .78rem; margin-left: auto; }
+.tagline { font-size: .9rem; color: #607d9c; margin-top: 7px; }
+.section-title { text-align:center; margin-bottom: 28px; }
+.section-title h2 { margin: 0; color: #152a4a; font-size: clamp(1.7rem, 3.8vw, 2.3rem); }
+.section-title p { color: #5d7b9c; max-width: 700px; margin: 10px auto 0; }
+.grid3 { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+.card { background: rgba(255,255,255,0.88); border: 1px solid var(--border); border-radius: 16px; padding: 18px; box-shadow: 0 14px 30px rgba(23, 46, 71, 0.12); transition: transform .25s ease; }
+.card:hover { transform: translateY(-4px) scale(1.01); }
+.card h3 { margin: 0 0 8px; color: #1a3f63; }
+.card p { margin:0; color: #5e7a98; line-height:1.5; }
+.card .tag { display:inline-block; color: #007ab7; background: rgba(0,207,255,0.15); border-radius: 999px; padding: 4px 10px; font-size: .78rem; margin-bottom: 10px; }
+.grid2 { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:16px; }
+.stats-grid { display:grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap:16px; }
+.stat-box { background: rgba(44,84,122,0.06); border: 1px solid rgba(84,131,165,0.2); border-radius: 14px; padding: 16px; }
+.stat-box h4 { margin:0; color:#0a2f52; }
+.stat-box p { margin:.45rem 0 0; color:#527197; }
+footer { background: #ffffff; border-top: 1px solid var(--line); padding: 24px 0; }
+.footer-inner { max-width: 1180px; margin:0 auto; display:flex; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+.footer-block { flex:1 1 260px; }
+.footer-block h4 { margin:0 0 9px; color:#1f3e63; }
+.footer-block p a { color:#1b4f79; }
+.fixed-whatsapp { position: fixed; bottom: 18px; right: 18px; width: 58px; height: 58px; background: linear-gradient(135deg, #00e4ff, #00a7dd); border-radius:50%; display:grid; place-items:center; box-shadow:0 12px 28px rgba(0,131,214,0.35); z-index:1100; text-decoration:none; }
+.fixed-whatsapp span { color:#042138; font-size:1.5rem; }
+.fade-up{opacity:0; transform: translateY(18px); transition: opacity .75s ease, transform .75s ease;}
+.fade-up.visible { opacity:1; transform: translateY(0); }
+@media (max-width: 1040px) { .hero-content { grid-template-columns: 1fr; } .hero-contact { position: static; margin-top: 20px; width: 100%; } .nav-links { display: none; } .btn-menu{ display:inline-flex;} }
 @media (max-width: 760px) {
-  .navbar { flex-wrap: wrap; }
-  .section { padding: 52px 0; }
-  .section-title h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
-  .hero h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
-  .hero p { font-size: 1rem; }
-}
-@media (max-width: 560px) {
-  body { font-size: 15px; }
-  .nav-links { display: none; }
-  .navbar { justify-content: space-between; }
-  .hero { min-height: 88vh; }
+  .section { padding: 50px 0; }
+  .grid3,.grid2,.stats-grid {grid-template-columns:1fr;}
+  .hero-text h1 { font-size: 2.15rem; }
+  .hero-contact { margin-top: 14px; }
 }
 </style>
 </head>
 <body>
 <header>
   <div class="navbar">
-    <div class="nav-brand">SALDIVAR DIGITAL BOX SAC</div>
+    <div class="brand">SALDIVAR DIGITAL BOX</div>
     <div class="nav-links" id="navLinks">
-      <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
       <a href="#catalogo">Catálogo</a>
       <a href="#autoridad">Autoridad</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <button class="btn-cta" id="menuToggle" aria-label="Abrir menú">Menú</button>
+    <button class="btn-menu" id="btnMenu">Menú</button>
   </div>
 </header>
 <main>
-  <section class="hero" id="inicio">
-    <div class="hero-content fade-up">
-      <p class="tag" style="color: #8edfff; letter-spacing: 0.7px;">Liderazgo tecnológico</p>
-      <h1>Optimización de hardware, desarrollo web a medida y seguridad digital</h1>
-      <p>Donde la ingeniería de sistemas, la experiencia UX y la ciberseguridad convergen en soluciones empresariales de alto impacto.</p>
-      <div class="hero-actions">
-        <a class="btn-cta" href="#contacto">Contáctanos ahora</a>
-        <a class="secondary-btn" href="#propuesta">Nuestra propuesta</a>
+  <section class="hero">
+    <svg class="hero-lines" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+      <path d="M80 140 h200 v-80 M360 320 h140 v-56 M520 560 h220 v-120 M1100 190 h200 v55" />
+      <path d="M1580 240 h-120 v160 M1520 620 h-220 v90 M420 810 h340 v-130" />
+    </svg>
+    <div class="container hero-content">
+      <div class="hero-text fade-up">
+        <h1>SALDIVAR DIGITAL BOX</h1>
+        <p>OPTIMIZACIÓN DE HARDWARE, DESARROLLO WEB A MEDIDA Y SEGURIDAD DIGITAL INTEGRADA.</p>
+        <div class="hero-cta">
+          <button class="btn-primary">Solicitar Diagnóstico</button>
+          <button class="btn-secondary">Ver Servicios</button>
+        </div>
+      </div>
+      <div class="hero-visual fade-up" style="position:relative;">
+        <div class="cube-wrap">
+          <div class="cube-bg" style="position:relative;">
+            <img src="image_0.png" alt="Cubo tecnológico 3D SALDIVAR DIGITAL BOX" style="width:100%;height:auto;border-radius:14px;object-fit:cover;display:block;">
+          </div>
+        </div>
+        <div class="hero-contact fade-up">
+          <h3>Contacto directo</h3>
+          <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.06-.21c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1v3.03a1 1 0 0 1-1 1A17 17 0 0 1 4 4a1 1 0 0 1 1-1h3.05a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.22 1.06l-2.2 2.2z"/></svg><span>📞 +51 990 754 196</span></div>
+          <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM4 4h16l-8 5-8-5zm8 7L4.95 5.9 4 6.68V18h16V6.7l-.95-.8L12 11z"/></svg><span>💬 WhatsApp +51 990 754 196</span></div>
+          <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 8h-1V6a5 5 0 0 0-10 0v2H8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-7 0V6a3 3 0 0 1 6 0v2h-6z"/></svg><span>✉️ jhon.4.palacios@gmail.com</span></div>
+          <span class="chip">Seguridad +99</span>
+          <p class="tagline">Soporte inmediato y cifrado de extremo a extremo.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section" id="servicios">
-    <div class="container" style="max-width: 1140px; margin: 0 auto;">
-      <div class="section-title fade-up">
-        <p class="tag">Servicios Cyber-Tech</p>
-        <h2>Galería de servicios con micro-interacción</h2>
-        <p>Plataformas inteligentes y seguridad activa con zoom suave y experiencia visual futurista para cada solución.</p>
-      </div>
-      <div class="grid3">
-        <article class="card fade-up">
-          <div class="card-header"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80" alt="Ingeniería de sistemas" /></div>
-          <div class="card-content"><span class="tag">Ingeniería de sistemas</span><h3>Infraestructura escalable</h3><p>Implementación de servidores de próxima generación con automatización IaC y resiliencia nocturna.</p></div>
-        </article>
-        <article class="card fade-up">
-          <div class="card-header"><img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1400&q=80" alt="Desarrollo web" /></div>
-          <div class="card-content"><span class="tag">Desarrollo web</span><h3>Sistemas a medida</h3><p>Soluciones B2B y B2C, e-commerce y microservicios con UX que maximizan conversiones y confianza.</p></div>
-        </article>
-        <article class="card fade-up">
-          <div class="card-header"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=80" alt="Ciberseguridad" /></div>
-          <div class="card-content"><span class="tag">Ciberseguridad</span><h3>Defensa proactiva</h3><p>Hardening, ataques éticos y monitoring 24/7 con protección integral y cumplimiento PCI-DSS / ISO 27001.</p></div>
-        </article>
+    <div class="container">
+      <div class="section-title fade-up"><h2>Servicios detallados</h2><p>Galería con micro-interacciones enfocada en infraestructura, software y ciberseguridad avanzada.</p></div>
+      <div class="grid3 fade-up">
+        <article class="card"><span class="tag">Ingeniería</span><h3>Proyecto de infraestructura TI</h3><p>Auditoría, diseño de red, instalación de servidores y scaling automático para operaciones críticas.</p></article>
+        <article class="card"><span class="tag">Desarrollo</span><h3>Sistemas web personalizados</h3><p>Frontend responsive, backend seguro y integración API con automatización CI/CD en cada release.</p></article>
+        <article class="card"><span class="tag">Ciberseguridad</span><h3>Protección avanzada</h3><p>Pen testing, SIEM, SOC y hardening con planes de contingencia para cero downtime.</p></article>
       </div>
     </div>
   </section>
 
-  <section class="section" id="catalogo" style="background: linear-gradient(160deg, #071427 0%, #0e1f36 100%);">
-    <div class="container" style="max-width: 1140px; margin: 0 auto;">
-      <div class="section-title fade-up">
-        <p class="tag">Catálogo de productos</p>
-        <h2>Hardware y software de clase empresarial</h2>
+  <section class="section" id="catalogo" style="background:#eef6ff;">
+    <div class="container">
+      <div class="section-title fade-up"><h2>Catálogo de productos</h2><p>Hardware y software seleccionados con soporte corporativo y despliegue profesional.</p></div>
+      <div class="grid2 fade-up">
+        <article class="card"><h3>Servidor Enterprise</h3><p>Intel Xeon, 128GB RAM ECC, NVMe RAID, soporte onsite 24h.</p></article>
+        <article class="card"><h3>Suite de seguridad</h3><p>Firewall UTM, doble-factor, protección DDoS y backup en la nube.</p></article>
       </div>
-      <div class="grid2">
-        <article class="card fade-up">
-          <div class="card-header"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1400&q=80" alt="Servidor de alto rendimiento" /></div>
-          <div class="card-content"><h3>Servidor optimizado</h3><p>CPU Xeon, RAM ECC, SSD NVMe, configuración personalizada y seguimiento de funcionamiento en tiempo real.</p><p style="font-weight:700;margin:8px 0;"> </p><button class="btn-cta">Comprar</button></div>
-        </article>
-        <article class="card fade-up">
-          <div class="card-header"><img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1400&q=80" alt="Suite de software" /></div>
-          <div class="card-content"><h3>Suite empresarial</h3><p>ERP/CRM, gestión de proyectos y protección de datos, implementada con API-ready y soporte local.</p><p style="font-weight:700;margin:8px 0;"> </p><button class="btn-cta"></button></div>
-        </article>
-      </div>
-      <div class="grid2" style="margin-top: 16px;">
-        <article class="card fade-up">
-          <div class="card-header"><img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1400&q=80" alt="Firewall" /></div>
-          <div class="card-content"><h3>Firewall + VPN</h3><p>Configuración avanzada de seguridad perimetral con inspección profunda y VPN híbrida para teletrabajo seguro.</p><p style="font-weight:700;margin:8px 0;"> </p><button class="btn-cta">Comprar</button></div>
-        </article>
-        <article class="card fade-up">
-          <div class="card-header"><img src="https://images.unsplash.com/photo-1555618721-2482aced9557?auto=format&fit=crop&w=1400&q=80" alt="Soporte técnico" /></div>
-          <div class="card-content"><h3>Soporte técnico 24/7</h3><p>Tickets rápidos, SLA asegurado, análisis forense y capacitación para tu equipo.</p><p style="font-weight:700;margin:8px 0;"> </p><button class="btn-cta">Comprar</button></div>
-        </article>
+      <div class="grid2" style="margin-top:16px;" class="fade-up">
+        <article class="card"><h3>Plataforma ERP</h3><p>Gestión integral de operaciones, inventarios, ventas y analítica en tiempo real.</p></article>
+        <article class="card"><h3>Soporte técnico 24/7</h3><p>Servicio en tiempo real con SLA prioritario y equipamiento de reemplazo.</p></article>
       </div>
     </div>
   </section>
 
   <section class="section" id="autoridad">
-    <div class="container" style="max-width: 1140px; margin: 0 auto;">
-      <div class="section-title fade-up">
-        <p class="tag">Autoridad + Propuesta de valor</p>
-        <h2>Casos de éxito y liderazgo sectorial</h2>
-        <p>Validado por clientes de banca, retail y manufactura con métricas contundentes y certificaciones internacionales.</p>
-      </div>
-      <div class="value-grid">
-        <div class="card fade-up"><div class="card-content"><h3>99.7% eficacia en uptime</h3><p>Reducción de fallas de hardware mediante mantenimiento predictivo y monitoreo AI.</p></div></div>
-        <div class="card fade-up"><div class="card-content"><h3>+320% ROI en 12 meses</h3><p>Implementación de sistemas automatizados que aceleran procesos críticos y recortan costos operativos.</p></div></div>
-        <div class="card fade-up"><div class="card-content"><h3>Certificaciones de clase mundial</h3><p>ISO 27001, ISO 9001, Cisco CCNA/CCNP, Microsoft Azure, y auditorías de seguridad semestrales.</p></div></div>
+    <div class="container">
+      <div class="section-title fade-up"><h2>Autoridad y casos de éxito</h2><p>Resultados medibles para banca, manufactura y retail con ROI superior al 320%.</p></div>
+      <div class="stats-grid fade-up">
+        <div class="stat-box"><h4>99.8% uptime</h4><p>Sistemas gestionados y monitorizados 24/7.</p></div>
+        <div class="stat-box"><h4>+320% ROI</h4><p>Optimización de hardware y procesos con reducción de costos.</p></div>
+        <div class="stat-box"><h4>Certificación Global</h4><p>ISO27001, ISO9001 y cumplimiento PCI-DSS.</p></div>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="footer" id="contacto">
-  <div class="footer-content">
-    <div class="footer-block"><h4>SALDIVAR DIGITAL BOX SAC</h4><p>Transformación digital con enfoque Cyber-Tech de élite y respaldo siempre disponible.</p></div>
-    <div class="footer-block"><h4>WhatsApp</h4><p><a href="https://wa.me/51990754196" target="_blank">990754196</a></p><h4>Correo</h4><p><a href="mailto:jhon.4.palacios@gmail.com">jhon.4.palacios@gmail.com</a></p></div>
-    <div class="footer-block"><h4>Conversión instantánea</h4><p>Agenda tu evaluación gratuita en menos de 15 minutos.</p><a class="btn-cta" href="https://wa.me/51990754196" target="_blank">Iniciar chat</a></div>
+<footer id="contacto">
+  <div class="container footer-inner fade-up">
+    <div class="footer-block"><h4>SALDIVAR DIGITAL BOX SAC</h4><p>Compromiso corporativo en cada despliegue y soporte.</p></div>
+    <div class="footer-block"><h4>Acceso rápido</h4><p><a href="https://wa.me/51990754196">WhatsApp</a> - <a href="tel:+51990754196">Teléfono</a> - <a href="mailto:jhon.4.palacios@gmail.com">Email</a></p></div>
+    <div class="footer-block"><h4>Confianza</h4><p>Data driven, SOPs auditables, consultoría premium.</p></div>
   </div>
-  <div class="footer-bottom">© 2026 SALDIVAR DIGITAL BOX SAC. Todos los derechos reservados.</div>
+  <div style="text-align:center; padding: 12px 0; color: #5d7f9e; font-size: 0.88rem;">© 2026 SALDIVAR DIGITAL BOX SAC. Todos los derechos reservados.</div>
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/51990754196" target="_blank" aria-label="WhatsApp directo"><span>💬</span></a>
+<a class="fixed-whatsapp" href="https://wa.me/51990754196" target="_blank" aria-label="WhatsApp directo"><span>💬</span></a>
 
 <script>
 (function(){
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-    });
-  }, {threshold:0.18});
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
 })();
 
-const menuToggle = document.getElementById('menuToggle');
+const btnMenu = document.getElementById('btnMenu');
 const navLinks = document.getElementById('navLinks');
-menuToggle.addEventListener('click', () => {
-  const visible = navLinks.style.display === 'flex';
-  navLinks.style.display = visible ? 'none' : 'flex';
+btnMenu.addEventListener('click', () => {
+  const isOpen = navLinks.style.display === 'flex';
+  navLinks.style.display = isOpen ? 'none' : 'flex';
   navLinks.style.flexDirection = 'column';
-  navLinks.style.background = 'rgba(6,15,28,0.8)';
   navLinks.style.position = 'absolute';
-  navLinks.style.top = '70px';
+  navLinks.style.top = '62px';
   navLinks.style.right = '18px';
+  navLinks.style.background = 'rgba(255,255,255,0.94)';
+  navLinks.style.border = '1px solid rgba(112,148,184,0.3)';
   navLinks.style.padding = '10px';
   navLinks.style.borderRadius = '10px';
 });
