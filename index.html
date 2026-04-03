@@ -44,13 +44,33 @@ header {
   gap: 14px;
 }
 .brand {
-  font-size: clamp(1.2rem, 2.4vw, 2rem);
+  display: inline-block;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+.brand-saldivar {
+  display: block;
+  font-size: clamp(1.2rem, 2.8vw, 2.6rem);
+  font-weight: 900;
+  color: #a1b0bd;
+  letter-spacing: 0.6px;
+  text-shadow:
+    0 1px 0 #f3f7fb,
+    0 2px 3px rgba(21, 50, 79, 0.35),
+    0 4px 10px rgba(0, 0, 0, 0.18);
+  background: linear-gradient(130deg, #c5c5c5 0%, #e4e9f2 60%, #aab6c7 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.brand-digital {
+  display: block;
+  font-size: clamp(1rem, 2.2vw, 1.55rem);
   font-weight: 900;
   letter-spacing: 1px;
-  color: #0f243f;
-  text-transform: uppercase;
-  display: inline-block;
-  text-shadow: 0 0 10px rgba(0, 207, 255, 0.35);
+  background: linear-gradient(105deg, #00d8ff 0%, #0074aa 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(0, 199, 255, 0.35);
 }
 .nav-links {
   display: flex;
@@ -75,27 +95,47 @@ main { overflow: hidden; }
   stroke-width: 2;
 }
 .hero-lines path { stroke: var(--stroke); }
+.hero {
+  text-align: center;
+  padding: 40px 0;
+}
+.hero-cube {
+  margin-bottom: 40px;
+}
+.hero-cube img {
+  max-width: 100%;
+  height: auto;
+}
 .hero-content {
-  position: relative;
-  z-index: 2;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 26px;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.hero-text {
+  text-align: left;
 }
 .hero-text h1 {
-  margin:0;
-  font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+  background: linear-gradient(120deg, #0e0f14 0%, #00c7fe 70%);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
   line-height: 1.05;
-  color: #0d2953;
+  margin: 0;
 }
 .hero-text p {
-  margin: 16px 0 24px;
-  font-size: clamp(1rem,2.2vw,1.25rem);
-  color: #566d89;
-  max-width: 620px;
+  margin: 18px 0 24px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--muted);
 }
-.hero-cta { display: inline-flex; gap: 12px; flex-wrap: wrap; }
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
 .btn-primary, .btn-secondary {
   border: none;
   border-radius: 999px;
@@ -104,41 +144,40 @@ main { overflow: hidden; }
   cursor: pointer;
   transition: transform .2s ease, box-shadow .2s ease;
 }
-.btn-primary { background: linear-gradient(135deg, #00e3ff 0%, #00b1eb 100%); color: #042037; }
-.btn-secondary { background: #f5fbff; color: #236690; border: 1px solid #b8d9f0; }
-.btn-primary:hover, .btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0, 174, 255, .2); }
-.hero-visual {
-  position: relative;
+.btn-primary {
+  background: linear-gradient(135deg, #00c7ff, #00a6d7);
+  color: #042037;
 }
-.cube-wrap {
-  width: 100%;
-  max-width: 580px;
-  margin: 0 auto;
+.btn-secondary {
+  background: #fff;
+  color: #007bae;
+  border: 1px solid #00b8f0;
 }
-.cube-bg {
-  width: 100%;
-  height: 100%;
-  border-radius: 22px;
-  box-shadow: 0 22px 50px rgba(23,52,92,.22);
-  background: linear-gradient(145deg, #f5faff, #dde8f6);
-  border: 1px solid rgba(132,169,206,0.28);
+.btn-primary:hover, .btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 174, 255, .2);
 }
-.hero-contact {
-  position: absolute;
-  right: 8px;
-  top: 12%;
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(84, 133, 173, 0.32);
-  border-radius: 18px;
-  width: 280px;
-  padding: 14px;
+.hero-contacts {
+  text-align: left;
 }
-.hero-contact h3 { margin: 0 0 10px; font-size: 1rem; color: #234967; }
-.contact-item { display: flex; align-items: center; gap: 10px; margin: 7px 0; font-size: .95rem; color: #1f3a5b; }
-.contact-item svg { width: 20px; height: 20px; fill: var(--accent); }
-.chip { background: rgba(0, 207, 255, 0.13); color: #11648c; padding: 4px 10px; border-radius: 999px; font-size: .78rem; margin-left: auto; }
-.tagline { font-size: .9rem; color: #607d9c; margin-top: 7px; }
+.hero-contacts h3 {
+  margin: 0 0 16px;
+  color: #1f3e63;
+  font-size: 1.1rem;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+  font-size: .95rem;
+  color: #2c4f72;
+}
+.contact-item svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--accent);
+}
 .section-title { text-align:center; margin-bottom: 28px; }
 .section-title h2 { margin: 0; color: #152a4a; font-size: clamp(1.7rem, 3.8vw, 2.3rem); }
 .section-title p { color: #5d7b9c; max-width: 700px; margin: 10px auto 0; }
@@ -162,19 +201,28 @@ footer { background: #ffffff; border-top: 1px solid var(--line); padding: 24px 0
 .fixed-whatsapp span { color:#042138; font-size:1.5rem; }
 .fade-up{opacity:0; transform: translateY(18px); transition: opacity .75s ease, transform .75s ease;}
 .fade-up.visible { opacity:1; transform: translateY(0); }
-@media (max-width: 1040px) { .hero-content { grid-template-columns: 1fr; } .hero-contact { position: static; margin-top: 20px; width: 100%; } .nav-links { display: none; } .btn-menu{ display:inline-flex;} }
+@media (max-width: 1040px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .hero-text, .hero-contacts {
+    text-align: center;
+  }
+  .nav-links { display: none; }
+  .btn-menu { display: inline-flex; }
+}
 @media (max-width: 760px) {
   .section { padding: 50px 0; }
   .grid3,.grid2,.stats-grid {grid-template-columns:1fr;}
   .hero-text h1 { font-size: 2.15rem; }
-  .hero-contact { margin-top: 14px; }
 }
 </style>
 </head>
 <body>
 <header>
   <div class="navbar">
-    <div class="brand">SALDIVAR DIGITAL BOX</div>
+    <div class="brand"><span class="brand-saldivar">SALDIVAR</span><span class="brand-digital">DIGITAL BOX</span></div>
     <div class="nav-links" id="navLinks">
       <a href="#servicios">Servicios</a>
       <a href="#catalogo">Catálogo</a>
@@ -190,28 +238,25 @@ footer { background: #ffffff; border-top: 1px solid var(--line); padding: 24px 0
       <path d="M80 140 h200 v-80 M360 320 h140 v-56 M520 560 h220 v-120 M1100 190 h200 v55" />
       <path d="M1580 240 h-120 v160 M1520 620 h-220 v90 M420 810 h340 v-130" />
     </svg>
-    <div class="container hero-content">
-      <div class="hero-text fade-up">
-        <h1>SALDIVAR DIGITAL BOX</h1>
-        <p>OPTIMIZACIÓN DE HARDWARE, DESARROLLO WEB A MEDIDA Y SEGURIDAD DIGITAL INTEGRADA.</p>
-        <div class="hero-cta">
-          <button class="btn-primary">Solicitar Diagnóstico</button>
-          <button class="btn-secondary">Ver Servicios</button>
-        </div>
+    <div class="container">
+      <div class="hero-cube fade-up">
+        <img src="image_0.png" alt="Cubo tecnológico 3D SALDIVAR DIGITAL BOX" />
       </div>
-      <div class="hero-visual fade-up" style="position:relative;">
-        <div class="cube-wrap">
-          <div class="cube-bg" style="position:relative;">
-            <img src="image_0.png" alt="Cubo tecnológico 3D SALDIVAR DIGITAL BOX" style="width:100%;height:auto;border-radius:14px;object-fit:cover;display:block;">
+      <div class="hero-content fade-up">
+        <div class="hero-text">
+          <h1>SALDIVAR DIGITAL BOX</h1>
+          <p>OPTIMIZACIÓN DE HARDWARE, DESARROLLO WEB A MEDIDA Y SEGURIDAD DIGITAL INTEGRADA.</p>
+          <div class="hero-cta">
+            <button class="btn-primary">Solicitar Diagnóstico</button>
+            <button class="btn-secondary">Ver Servicios</button>
           </div>
         </div>
-        <div class="hero-contact fade-up">
-          <h3>Contacto directo</h3>
+        <div class="hero-contacts">
+          <h3>Contacto</h3>
           <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.06-.21c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1v3.03a1 1 0 0 1-1 1A17 17 0 0 1 4 4a1 1 0 0 1 1-1h3.05a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.22 1.06l-2.2 2.2z"/></svg><span>+51 990 754 196</span></div>
           <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg><span>+51 990 754 196</span></div>
           <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span>jhon.4.palacios@gmail.com</span></div>
-          <span class="chip"><svg viewBox="0 0 24 24" style="width:14px;height:14px;margin-right:4px;"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm3 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>Seguridad +99</span>
-          <p class="tagline">Soporte inmediato y cifrado de extremo a extremo.</p>
+          <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm3 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg><span>Seguridad +99</span></div>
         </div>
       </div>
     </div>
