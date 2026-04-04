@@ -181,37 +181,6 @@
     .logo-coded .bottom-text { font-size: 20px; }
 }
 
-    .hero-cube img {
-      max-width: 450px;
-      width: 90%;
-      height: auto;
-      filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.1));
-    }
-
-    .hero-text h1 {
-      background: linear-gradient(120deg, #0e0f14 0%, #00c7fe 70%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 900;
-      margin: 20px 0;
-    }
-
-    .hero-text p {
-      max-width: 800px;
-      margin: 0 auto 30px;
-      color: var(--muted);
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
-
     /* BOTONES */
     .btn-primary,
     .btn-secondary {
@@ -506,6 +475,68 @@
       filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
       display: block;
     }
+
+    /* Contenedor Principal con Flexbox */
+.hero-container {
+    display: flex;
+    flex-wrap: wrap; /* Esto permite que el contenido baje en móviles */
+    align-items: center; /* Centra verticalmente imagen y texto */
+    justify-content: center;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 50px; /* Espacio entre columnas */
+}
+
+/* Columna de la Imagen */
+.hero-visual {
+    flex: 1; /* Ocupa espacio proporcional */
+    min-width: 320px; /* Evita que se vea muy pequeña en móvil */
+    max-width: 500px; /* Evita que crezca demasiado en PC */
+}
+
+.hero-visual img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Columna del Texto */
+.hero-text-side {
+    flex: 1.2;
+    min-width: 320px;
+}
+
+.hero-text-side h2 {
+    color: #093479;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center; /* Centrado limpio vía CSS */
+}
+
+/* Cajas de Información (Misión/Visión) */
+.info-box {
+    margin-bottom: 25px;
+    padding-left: 20px;
+    border-left: 4px solid #00d8ff; /* Línea cian distintiva */
+}
+
+.info-box h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.info-box p {
+    margin: 0;
+    line-height: 1.6;
+    color: #555;
+    font-size: 1rem;
+    text-align: justify; /* Opcional: para que se vea más cuadrado como en tu captura */
+}
   </style>
 </head>
 
@@ -533,37 +564,34 @@
     </nav>
 </header>
 
-  <main>
-    <section class="hero-container">
-      <!-- IMAGEN AL LADO IZQUIERDO -->
-      <div class="hero-visual">
-        <img src="image_0.jpeg" alt="Saldivar Digital Box Tecnología">
+<main>
+  <section class="hero-container">
+    <!-- IMAGEN AL LADO IZQUIERDO -->
+    <div class="hero-visual">
+      <img src="image_0.jpeg" alt="Saldivar Digital Box Tecnología">
+    </div>
+
+    <!-- DESCRIPCIÓN AL FRENTE (DERECHA) -->
+    <div class="hero-text-side">
+      <center>
+        <h2>Reseña Corporativa</h2>
+      </center>
+      <div class="info-box">
+        <p>Consultora especializada en el diseño, despliegue y gestión de ecosistemas tecnológicos críticos, orientada a potenciar la eficiencia operativa mediante la integración de infraestructura robusta y arquitecturas de software escalables.</p>
       </div>
 
-      <!-- DESCRIPCIÓN AL FRENTE (DERECHA) -->
-      <div class="hero-text-side">
-        <center>
-          <h2>Reseña Corporativa</h2>
-        </center>
-        <div class="info-box">
-
-          <p>Consultora especializada en el diseño, despliegue y gestión de ecosistemas tecnológicos críticos, orientada
-            a potenciar la eficiencia operativa mediante la integración de infraestructura robusta y arquitecturas de
-            software escalables.
-        </div>
-
-        <div class="info-box">
-          <h3>Nuestra Misión</h3>
-          <p>Suministrar soluciones de ingeniería de sistemas de alto rendimiento, enfocadas en la optimización de recursos computacionales y el endurecimiento de la postura de ciberseguridad de nuestros aliados, mediante la implementación de metodologías ágiles y tecnologías de vanguardia.</p>
-        </div>
-
-        <div class="info-box">
-          <h3>Nuestra Visión</h3>
-          <p>Consolidarnos como el partner tecnológico predilecto a nivel regional, distinguiéndonos por la excelencia técnica en la gestión de infraestructura híbrida y la provisión de soluciones disruptivas que impulsen la transformación digital sostenible de nuestros clientes.</p>
-        </div>
+      <div class="info-box">
+        <h3>Nuestra Misión</h3>
+        <p>Suministrar soluciones de ingeniería de sistemas de alto rendimiento, enfocadas en la optimización de recursos computacionales y el endurecimiento de la postura de ciberseguridad de nuestros aliados, mediante la implementación de metodologías ágiles y tecnologías de vanguardia.</p>
       </div>
-    </section>
 
+      <div class="info-box">
+        <h3>Nuestra Visión</h3>
+        <p>Consolidarnos como el partner tecnológico predilecto a nivel regional, distinguiéndonos por la excelencia técnica en la gestión de infraestructura híbrida y la provisión de soluciones disruptivas que impulsen la transformación digital sostenible de nuestros clientes.</p>
+      </div>
+    </div>
+  </section>
+</main>
     <!-- NUEVA SECCIÓN: PRIMERO SERVICIOS -->
     <section class="section" id="Servicios">
       <div class="container">
