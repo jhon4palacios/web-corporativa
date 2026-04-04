@@ -154,16 +154,32 @@
 
     /* Ajuste para celulares */
     @media (max-width: 768px) {
-      .hero-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-text-side,
-      .hero-visual {
-        text-align: center;
-      }
+    /* Forzamos a que el encabezado se apile verticalmente */
+    .navbar-custom, .navbar-refined {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 15px 10px !important;
     }
+
+    /* Aseguramos que el contenedor del menú sea visible */
+    .nav-links {
+        display: flex !important; /* Cambia a flex para que se vea */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    /* Ajustamos el logo en móvil para que no ocupe todo */
+    .logo-coded .top-text { font-size: 18px; }
+    .logo-coded .bottom-text { font-size: 20px; }
+}
 
     .hero-cube img {
       max-width: 450px;
