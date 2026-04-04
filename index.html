@@ -1,419 +1,792 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SALDIVAR DIGITAL BOX SAC | Landing Corporativa</title>
-<meta name="description" content="Optimización de hardware, desarrollo web a medida y seguridad digital integrada" />
-<style>
-    .barra-contacto-horizontal {
-  background: #ffffff;
-  padding: 30px 0;
-  border-top: 1px solid rgba(0, 207, 254, 0.2);
-  width: 100%;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SALDIVAR DIGITAL BOX SAC | Ingeniería y Tecnología</title>
+  <meta name="description" content="Optimización de hardware, desarrollo web a medida y seguridad digital integrada" />
 
-.container-horizontal {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row; /* Fuerza la línea horizontal */
-  justify-content: center; /* Centra el contenido */
-  align-items: center;
-  gap: 45px; /* Espacio horizontal */
-  flex-wrap: wrap; /* Para móviles */
-}
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-.item-contacto {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #1a3f63;
-  font-weight: 600;
-  font-size: 0.95rem;
-}
+  <style>
+    :root {
+      --bg: #f8fcff;
+      --panel: rgba(255, 255, 255, 0.75);
+      --glass: rgba(250, 253, 255, 0.85);
+      --line: #d8e5f2;
+      --text: #1f2d44;
+      --muted: #6f849f;
+      --accent: #00cffe;
+      --border: rgba(112, 148, 184, 0.36);
+    }
 
-.item-contacto svg {
-  width: 24px;
-  height: 24px;
-  fill: #00cffe; /* Tu color cian distintivo */
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* Hover para que el usuario sepa que puede hacer clic */
-.item-contacto:hover {
-  color: #00cffe;
-  transform: translateY(-2px);
-  transition: 0.2s;
-}
-:root {
-  --bg: #f8fcff;
-  --panel: rgba(255,255,255,0.75);
-  --glass: rgba(250,253,255,0.7);
-  --line: #d8e5f2;
-  --text: #1f2d44;
-  --muted: #6f849f;
-  --accent: #00cffe;
-  --accent-2: #00a7d8;
-  --border: rgba(112,148,184,0.36);
-}
-* { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background-color: #f4f7f9;
+      color: #093479;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
 
-  /* Base de la página limpia y profesional */
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #0f0f0f10; /* Fondo blanco absoluto */
-    color: #093479;
-    overflow-x: hidden;
-  }
+    /* CAPA DE FONDO: Cuadrícula y Circuitos */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(209, 217, 230, 0.2) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(209, 217, 230, 0.2) 1px, transparent 1px);
+      background-size: 35px 35px;
+      z-index: -2;
+    }
 
-  /* CAPA 1: La Cuadrícula Técnica Base (Más Clara) */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Cuadrícula en gris técnico suave pero visible */
-    background-image: 
-      linear-gradient(to right, rgba(209, 217, 230, 0.25) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(209, 217, 230, 0.25) 1px, transparent 1px);
-    background-size: 35px 35px; /* Cuadros un poco más grandes */
-    z-index: -2; /* Va detrás de todo */
-    pointer-events: none;
-  }
+    main {
+      background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20 h60 v60 h-60 z M50 20 v60 M20 50 h60 M90 20 l40 40 h50 M90 50 l40 40 h50 M20 100 h50 l30 30 h80 M20 130 h150 M150 100 v80 M120 130 v50 M180 20 v160' stroke='rgba(209, 217, 230, 0.4)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+      background-size: 280px 280px;
+      background-attachment: fixed;
+    }
 
-  /* CAPA 2: El Esquema de Circuitos (Gris Claro y Nítido - Como tu imagen) */
-  main {
-    position: relative;
-    /* Este SVG crea las líneas esquemáticas en gris técnico #d1d9e6 */
-    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20 h60 v60 h-60 z M50 20 v60 M20 50 h60 M90 20 l40 40 h50 M90 50 l40 40 h50 M20 100 h50 l30 30 h80 M20 130 h150 M150 100 v80 M120 130 v50 M180 20 v160' stroke='rgba(209, 217, 230, 0.4)' stroke-width='1' fill='none'/%3E%3Ccircle cx='50' cy='50' r='3' fill='rgba(209, 217, 230, 0.5)'/%3E%3Ccircle cx='130' cy='60' r='2' fill='rgba(209, 217, 230, 0.5)'/%3E%3Ccircle cx='70' cy='100' r='2' fill='rgba(209, 217, 230, 0.5)'/%3E%3C/svg%3E");
-    background-size: 280px 280px; /* Tamaño del patrón */
-    background-attachment: fixed; /* El fondo se queda quieto al hacer scroll */
-    z-index: 1;
-  }
+    /* HEADER COMPACTO */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: var(--glass);
+      border-bottom: 1px solid var(--border);
+    }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(12px);
-  background: var(--glass);
-  border-bottom: 1px solid var(--border);
-}
-.navbar {
-  max-width: 1180px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 18px;
-  gap: 14px;
-}
-.brand {
-  display: inline-block;
-  text-transform: uppercase;
-  line-height: 1.1;
-}
-.brand-saldivar {
-  display: block;
-  font-size: clamp(1.2rem, 2.8vw, 2.6rem);
-  font-weight: 900;
-  color: #a1b0bd;
-  letter-spacing: 0.6px;
-  text-shadow:
-    0 1px 0 #f3f7fb,
-    0 2px 3px rgba(21, 50, 79, 0.35),
-    0 4px 10px rgba(0, 0, 0, 0.18);
-  background: linear-gradient(130deg, #c5c5c5 0%, #e4e9f2 60%, #aab6c7 100%);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-.brand-digital {
-  display: block;
-  font-size: clamp(1rem, 2.2vw, 1.55rem);
-  font-weight: 900;
-  letter-spacing: 1px;
-  background: linear-gradient(105deg, #00d8ff 0%, #0074aa 100%);
-  -webkit-background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 20px rgba(0, 199, 255, 0.35);
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.nav-links a { font-weight: 600; color: #35516e; padding: 8px 10px; border-radius: 10px; transition: all .2s ease; }
-.nav-links a:hover { background: rgba(0, 207, 255, 0.18); color: #0d2743; }
-.btn-menu { display: none; background: var(--accent); color: #06182b; border:none; padding: 8px 13px; border-radius: 999px; cursor: pointer; font-weight: 700; }
-main { overflow: hidden; }
-.section { padding: 68px 0; }
-.container { width: min(1160px, 92vw); margin: 0 auto; }
-.hero {
-  position: relative;
-  min-height: 96vh;
-  padding: 60px 0 40px;
-}
-.hero-lines {
-  position: absolute;
-  inset: 0;
-  --stroke: rgba(86,138,178,0.25);
-  stroke-width: 2;
-}
-.hero-lines path { stroke: var(--stroke); }
-.hero {
-  text-align: center;
-  padding: 40px 0;
-}
-.hero-cube {
-  margin-bottom: 40px;
-}
-.hero-cube img {
-  max-width: 100%;
-  height: auto;
-}
-.hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-  max-width: 1180px;
-  margin: 0 auto;
-}
-.hero-text {
-  text-align: left;
-}
-.hero-text h1 {
-  background: linear-gradient(120deg, #0e0f14 0%, #00c7fe 70%);
-  -webkit-background-clip: text;
-  color: transparent;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 900;
-  line-height: 1.05;
-  margin: 0;
-}
-.hero-text p {
-  margin: 18px 0 24px;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  color: var(--muted);
-}
-.hero-cta {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.btn-primary, .btn-secondary {
-  border: none;
-  border-radius: 999px;
-  font-weight: 700;
-  padding: 12px 18px;
-  cursor: pointer;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.btn-primary {
-  background: linear-gradient(135deg, #00c7ff, #00a6d7);
-  color: #042037;
-}
-.btn-secondary {
-  background: #fff;
-  color: #007bae;
-  border: 1px solid #00b8f0;
-}
-.btn-primary:hover, .btn-secondary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(0, 174, 255, .2);
-}
-.hero-contacts {
-  text-align: left;
-}
-.hero-contacts h3 {
-  margin: 0 0 16px;
-  color: #1f3e63;
-  font-size: 1.1rem;
-}
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 8px 0;
-  font-size: .95rem;
-  color: #2c4f72;
-}
-.contact-item svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--accent);
-}
-.section-title { text-align:center; margin-bottom: 28px; }
-.section-title h2 { margin: 0; color: #152a4a; font-size: clamp(1.7rem, 3.8vw, 2.3rem); }
-.section-title p { color: #5d7b9c; max-width: 700px; margin: 10px auto 0; }
-.grid3 { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
-.card { background: rgba(255,255,255,0.88); border: 1px solid var(--border); border-radius: 16px; padding: 18px; box-shadow: 0 14px 30px rgba(23, 46, 71, 0.12); transition: transform .25s ease; }
-.card:hover { transform: translateY(-4px) scale(1.01); }
-.card h3 { margin: 0 0 8px; color: #1a3f63; }
-.card p { margin:0; color: #5e7a98; line-height:1.5; }
-.card .tag { display:inline-block; color: #007ab7; background: rgba(0,207,255,0.15); border-radius: 999px; padding: 4px 10px; font-size: .78rem; margin-bottom: 10px; }
-.grid2 { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:16px; }
-.stats-grid { display:grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap:16px; }
-.stat-box { background: rgba(44,84,122,0.06); border: 1px solid rgba(84,131,165,0.2); border-radius: 14px; padding: 16px; }
-.stat-box h4 { margin:0; color:#0a2f52; }
-.stat-box p { margin:.45rem 0 0; color:#527197; }
-footer { background: #ffffff; border-top: 1px solid var(--line); padding: 24px 0; }
-.footer-inner { max-width: 1180px; margin:0 auto; display:flex; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
-.footer-block { flex:1 1 260px; }
-.footer-block h4 { margin:0 0 9px; color:#1f3e63; }
-.footer-block p a { color:#1b4f79; }
-.fixed-whatsapp { position: fixed; bottom: 18px; right: 18px; width: 58px; height: 58px; background: linear-gradient(135deg, #00e4ff, #00a7dd); border-radius:50%; display:grid; place-items:center; box-shadow:0 12px 28px rgba(0,131,214,0.35); z-index:1100; text-decoration:none; }
-.fixed-whatsapp span { color:#042138; font-size:1.5rem; }
-.fade-up{opacity:0; transform: translateY(18px); transition: opacity .75s ease, transform .75s ease;}
-.fade-up.visible { opacity:1; transform: translateY(0); }
-@media (max-width: 1040px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .hero-text, .hero-contacts {
-    text-align: center;
-  }
-  .nav-links { display: none; }
-  .btn-menu { display: inline-flex; }
-}
-@media (max-width: 760px) {
-  .section { padding: 50px 0; }
-  .grid3,.grid2,.stats-grid {grid-template-columns:1fr;}
-  .hero-text h1 { font-size: 2.15rem; }
-}
-</style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5px 20px;
+      min-height: 60px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #35516e;
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: rgba(0, 207, 255, 0.1);
+      color: var(--accent);
+    }
+
+
+    /* Estructura de la sección principal */
+    .hero-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      gap: 50px;
+      /* Espacio entre imagen y texto */
+    }
+
+    /* Imagen a la izquierda */
+    .hero-visual {
+      flex: 1;
+      text-align: left;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      max-width: 450px;
+      /* Controla el ancho máximo */
+      max-height: 900px;
+      /* ESTO EVITA QUE SEA MUY ALTA */
+      object-fit: contain;
+      /* Mantiene la proporción sin deformar */
+      height: auto;
+      border-radius: 15px;
+      filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.15));
+    }
+
+    /* Descripción a la derecha */
+    .hero-text-side {
+      flex: 1;
+      text-align: left;
+    }
+
+    .hero-text-side h2 {
+      color: #093479;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-family: 'Arial Black', sans-serif;
+    }
+
+    .info-box {
+      margin-bottom: 25px;
+      padding-left: 15px;
+      border-left: 4px solid #00d8ff;
+    }
+
+    .info-box h3 {
+      font-size: 1.1rem;
+      color: #333;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .info-box p {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Ajuste para celulares */
+    @media (max-width: 768px) {
+      .hero-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text-side,
+      .hero-visual {
+        text-align: center;
+      }
+    }
+
+    .hero-cube img {
+      max-width: 450px;
+      width: 90%;
+      height: auto;
+      filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.1));
+    }
+
+    .hero-text h1 {
+      background: linear-gradient(120deg, #0e0f14 0%, #00c7fe 70%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      margin: 20px 0;
+    }
+
+    .hero-text p {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    /* BOTONES */
+    .btn-primary,
+    .btn-secondary {
+      border: none;
+      border-radius: 999px;
+      font-weight: 700;
+      padding: 12px 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #00c7ff, #00a6d7);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: #007bae;
+      border: 1px solid #00b8f0;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 199, 255, 0.3);
+    }
+
+    /* SECCIONES Y CARDS ORIGINALES */
+    .section {
+      padding: 60px 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      color: #152a4a;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .grid3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(0, 207, 255, 0.1);
+      color: #007bb7;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+
+    /* ESTILOS NUEVOS: CUADROS INTERACTIVOS (FLIP EFFECT) */
+    .interactive-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      height: 300px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .flip-card-front {
+      background-color: #fff;
+      color: var(--text);
+    }
+
+    .flip-card-front i {
+      font-size: 4rem;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .flip-card-back {
+      background: linear-gradient(135deg, #093479, #00cffe);
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-back h3 {
+      margin-bottom: 10px;
+    }
+
+    .flip-card-back p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    /* ICONOS DE CONTACTO ANIMADOS */
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 40px 0;
+      gap: 15px;
+    }
+
+    .wrapper .icon {
+      position: relative;
+      background: #fff;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      text-decoration: none;
+      color: #333;
+      font-size: 20px;
+    }
+
+    .wrapper .tooltip {
+      position: absolute;
+      top: 0;
+      font-size: 14px;
+      background: #fff;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    .wrapper .icon:hover .tooltip {
+      top: -45px;
+      opacity: 1;
+    }
+
+    .facebook:hover,
+    .facebook:hover .tooltip {
+      background: #1877F2;
+      color: #fff;
+    }
+
+    .instagram:hover,
+    .instagram:hover .tooltip {
+      background: #E4405F;
+      color: #fff;
+    }
+
+    .whatsapp:hover,
+    .whatsapp:hover .tooltip {
+      background: #25D366;
+      color: #fff;
+    }
+
+    .youtube:hover,
+    .youtube:hover .tooltip {
+      background: #CD201F;
+      color: #fff;
+    }
+
+    /* WHATSAPP FLOTANTE */
+    .fixed-whatsapp {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      z-index: 1100;
+      text-decoration: none;
+      font-size: 30px;
+    }
+
+    /* ANIMACIÓN */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.8s ease-out;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-cube img {
+        max-width: 300px;
+      }
+    }
+
+    /* DISEÑO DE LOGO REFORZADO */
+    .logo-coded {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      /* Un poco más de espacio para evitar cortes */
+      font-family: 'Arial Black', sans-serif;
+      text-align: left;
+      text-transform: uppercase;
+      user-select: none;
+    }
+
+    .logo-coded .top-text {
+      font-size: 24px;
+      font-weight: 900;
+      color: #454545;
+      /* Color de respaldo si falla el degradado */
+      background: linear-gradient(to bottom, #757575 0%, #000000 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+      display: block;
+    }
+
+    .logo-coded .bottom-text {
+      font-size: 26px;
+      font-weight: 900;
+      color: #00c7fe;
+      /* Color de respaldo si falla el degradado */
+      background: linear-gradient(to bottom, #00d8ff 0%, #093479 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+      display: block;
+    }
+  </style>
 </head>
+
 <body>
-<header>
-  <div class="navbar">
-    <div class="brand"><span class="brand-saldivar">SALDIVAR</span><span class="brand-digital">DIGITAL BOX</span></div>
-    <div class="nav-links" id="navLinks">
-      <a href="#servicios">Servicios</a>
-      <a href="#catalogo">Catálogo</a>
-      <a href="#autoridad">Autoridad</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-    <button class="btn-menu" id="btnMenu">Menú</button>
-  </div>
-</header>
-<main>
-  <section class="hero">
-    <div class="container">
-      <div class="hero-cube fade-up">
-        <img src="image_0.png" alt="Cubo tecnológico 3D SALDIVAR DIGITAL BOX" />
-      </div>
-      <div class="hero-content fade-up">
-        <div class="hero-text">
-          <h1>SALDIVAR DIGITAL BOX SAC</h1>
-          <p>OPTIMIZACIÓN DE HARDWARE, DESARROLLO WEB A MEDIDA Y SEGURIDAD DIGITAL INTEGRADA.</p>
-          <div class="hero-cta">
-            <button class="btn-primary">Solicitar Diagnóstico</button>
-            <button class="btn-secondary">Ver Servicios</button>
-          </div>
+
+  <header>
+    <nav class="navbar">
+      <div class="brand">
+        <div class="logo-coded">
+          <span class="top-text">SALDIVAR</span>
+          <span class="bottom-text">DIGITAL BOX</span>
         </div>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#Servicios">Servicios</a>
+        <a href="#Productos">Productos</a>
+        <a href="#Soporte_Tecnico">Soporte Técnico</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-container">
+      <!-- IMAGEN AL LADO IZQUIERDO -->
+      <div class="hero-visual">
+        <img src="image_0.jpeg" alt="Saldivar Digital Box Tecnología">
+      </div>
+
+      <!-- DESCRIPCIÓN AL FRENTE (DERECHA) -->
+      <div class="hero-text-side">
+        <center>
+          <h2>Reseña Corporativa</h2>
+        </center>
+        <div class="info-box">
+
+          <p>Consultora especializada en el diseño, despliegue y gestión de ecosistemas tecnológicos críticos, orientada
+            a potenciar la eficiencia operativa mediante la integración de infraestructura robusta y arquitecturas de
+            software escalables.
+        </div>
+
+        <div class="info-box">
+          <h3>Nuestra Misión</h3>
+          <p>Suministrar soluciones de ingeniería de sistemas de alto rendimiento, enfocadas en la optimización de recursos computacionales y el endurecimiento de la postura de ciberseguridad de nuestros aliados, mediante la implementación de metodologías ágiles y tecnologías de vanguardia.</p>
+        </div>
+
+        <div class="info-box">
+          <h3>Nuestra Visión</h3>
+          <p>Consolidarnos como el partner tecnológico predilecto a nivel regional, distinguiéndonos por la excelencia técnica en la gestión de infraestructura híbrida y la provisión de soluciones disruptivas que impulsen la transformación digital sostenible de nuestros clientes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: PRIMERO SERVICIOS -->
+    <section class="section" id="Servicios">
+      <div class="container">
+        <div class="section-title fade-up">
+          <h2>Servicios</h2>
+          <p>Pasa el puntero para descubrir más detalles.</p>
+        </div>
+        <div class="interactive-grid fade-up">
+
+          <!-- SERVICIOS DE INGENIERÍA -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fas fa-tools"></i>
+                <h3>Servicios de Ingeniería</h3>
               </div>
-    </div>
-  </section>
+              <div class="flip-card-back">
+                <h3>Ingeniería Aplicada</h3>
+                <p>Optimización de procesos industriales, diseño de sistemas complejos y soporte técnico de alto nivel.
+                </p>
+              </div>
+            </div>
+          </div>
 
-  <section class="section" id="servicios">
-    <div class="container">
-      <div class="section-title fade-up"><h2>Servicios detallados</h2><p>Galería con micro-interacciones enfocada en infraestructura, software y ciberseguridad avanzada.</p></div>
-      <div class="grid3 fade-up">
-        <article class="card"><span class="tag">Ingeniería</span><h3>Proyecto de infraestructura TI</h3><p>Auditoría, diseño de red, instalación de servidores y scaling automático para operaciones críticas.</p></article>
-        <article class="card"><span class="tag">Desarrollo</span><h3>Sistemas web personalizados</h3><p>Frontend responsive, backend seguro y integración API con automatización CI/CD en cada release.</p></article>
-        <article class="card"><span class="tag">Ciberseguridad</span><h3>Protección avanzada</h3><p>Pen testing, SIEM, SOC y hardening con planes de contingencia para cero downtime.</p></article>
+          <!-- PRODUCTOS (MOUSE) -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fas fa-mouse"></i>
+                <h3>Productos</h3>
+              </div>
+              <div class="flip-card-back">
+                <h3>Catálogo Tecnológico</h3>
+                <p>Hardware premium, periféricos de alta precisión y componentes optimizados para rendimiento extremo.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- AUTORIDAD -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fas fa-user-shield"></i>
+                <h3>Autoridad</h3>
+              </div>
+              <div class="flip-card-back">
+                <h3>Confianza Certificada</h3>
+                <p>Liderazgo en el sector digital con estándares de seguridad y protocolos de ingeniería validados
+                  internacionalmente.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="catalogo" style="background:#eef6ff;">
-    <div class="container">
-      <div class="section-title fade-up"><h2>Catálogo de productos</h2><p>Hardware y software seleccionados con soporte corporativo y despliegue profesional.</p></div>
-      <div class="grid2 fade-up">
-        <article class="card"><h3>Servidor Enterprise</h3><p>Intel Xeon, 128GB RAM ECC, NVMe RAID, soporte onsite 24h.</p></article>
-        <article class="card"><h3>Suite de seguridad</h3><p>Firewall UTM, doble-factor, protección DDoS y backup en la nube.</p></article>
+   
+<!-- NUEVA SECCIÓN: SEGUNDO PRODUCTOS -->
+    <section class="section" id="Productos">
+      <div class="container">
+        <div class="section-title fade-up">
+          <h2>Productos</h2>
+          <p>Pasa el puntero para descubrir más detalles.</p>
+        </div>
+        <div class="interactive-grid fade-up">
+
+          <!-- SERVICIOS DE INGENIERÍA -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fas fa-tools"></i>
+                <h3>Productos</h3>
+              </div>
+              <div class="flip-card-back">
+                <h3>Ingeniería Aplicada</h3>
+                <p>Optimización de procesos industriales, diseño de sistemas complejos y soporte técnico de alto nivel.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCTOS (MOUSE) -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fas fa-mouse"></i>
+                <h3>Productos</h3>
+              </div>
+              <div class="flip-card-back">
+                <h3>Catálogo Tecnológico</h3>
+                <p>Hardware premium, periféricos de alta precisión y componentes optimizados para rendimiento extremo.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- AUTORIDAD -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fas fa-user-shield"></i>
+                <h3>Autoridad</h3>
+              </div>
+              <div class="flip-card-back">
+                <h3>Confianza Certificada</h3>
+                <p>Liderazgo en el sector digital con estándares de seguridad y protocolos de ingeniería validados
+                  internacionalmente.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
-      <div class="grid2" style="margin-top:16px;" class="fade-up">
-        <article class="card"><h3>Plataforma ERP</h3><p>Gestión integral de operaciones, inventarios, ventas y analítica en tiempo real.</p></article>
-        <article class="card"><h3>Soporte técnico 24/7</h3><p>Servicio en tiempo real con SLA prioritario y equipamiento de reemplazo.</p></article>
+    </section>
+
+
+<!-- NUEVA SECCIÓN: TERCERO SOPORTE TÉCNICO -->
+    <section class="section" id="Soporte_Tecnico">
+      <div class="container">
+        <div class="section-title fade-up">
+          <h2>Soporte Técnico</h2>
+          <p>Pasa el puntero para descubrir más detalles.</p>
+        </div>
+        <div class="interactive-grid fade-up">
+
+          <!-- SERVICIOS DE INGENIERÍA -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fas fa-tools"></i>
+                <h3>Productos</h3>
+              </div>
+              <div class="flip-card-back">
+                <h3>Ingeniería Aplicada</h3>
+                <p>Optimización de procesos industriales, diseño de sistemas complejos y soporte técnico de alto nivel.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCTOS (MOUSE) -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fas fa-mouse"></i>
+                <h3>Productos</h3>
+              </div>
+              <div class="flip-card-back">
+                <h3>Catálogo Tecnológico</h3>
+                <p>Hardware premium, periféricos de alta precisión y componentes optimizados para rendimiento extremo.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- AUTORIDAD -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <i class="fas fa-user-shield"></i>
+                <h3>Autoridad</h3>
+              </div>
+              <div class="flip-card-back">
+                <h3>Confianza Certificada</h3>
+                <p>Liderazgo en el sector digital con estándares de seguridad y protocolos de ingeniería validados
+                  internacionalmente.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="autoridad">
-    <div class="container">
-      <div class="section-title fade-up"><h2>Autoridad y casos de éxito</h2><p>Resultados medibles para banca, manufactura y retail con ROI superior al 320%.</p></div>
-      <div class="stats-grid fade-up">
-        <div class="stat-box"><h4>99.8% uptime</h4><p>Sistemas gestionados y monitorizados 24/7.</p></div>
-        <div class="stat-box"><h4>+320% ROI</h4><p>Optimización de hardware y procesos con reducción de costos.</p></div>
-        <div class="stat-box"><h4>Certificación Global</h4><p>ISO27001, ISO9001 y cumplimiento PCI-DSS.</p></div>
+<!-- Otro tipo de menú -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-title fade-up">
+          <h2>Productos</h2>
+          <p>Infraestructura TI y Ciberseguridad avanzada.</p>
+        </div>
+        <div class="grid3 fade-up">
+          <article class="card"><span class="tag">Ingeniería</span>
+            <h3>Infraestructura TI</h3>
+            <p>Auditoría, diseño de red y scaling automático.</p>
+          </article>
+          <article class="card"><span class="tag">Desarrollo</span>
+            <h3>Sistemas Web</h3>
+            <p>Frontend responsive y automatización CI/CD.</p>
+          </article>
+          <article class="card"><span class="tag">Seguridad</span>
+            <h3>Protección SOC</h3>
+            <p>Pen testing y hardening para cero downtime.</p>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
-</main>
-<section class="barra-contacto-horizontal">
-  <div class="container-horizontal">
-    <div class="item-contacto">
-      <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.06-.21c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1v3.03a1 1 0 0 1-1 1A17 17 0 0 1 4 4a1 1 0 0 1 1-1h3.05a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.22 1.06l-2.2 2.2z"/></svg>
-      <span>+51 990 754 196</span>
-    </div>
-    
-    <div class="item-contacto">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
-      <span>+51 990 754 196</span>
-    </div>
+    </section>
 
-    <div class="item-contacto">
-      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-      <span>jhon.4.palacios@gmail.com</span>
-    </div>
 
-    <div class="item-contacto">
-      <a href="https://www.facebook.com/tu-pagina" target="_blank" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
-        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        <span>Saldivar Digital Box</span>
-      </a>
-    </div>
-  </div>
-</section>
-<footer id="contacto">
-  <div class="container footer-inner fade-up">
-    <div class="footer-block"><h4>SALDIVAR DIGITAL BOX SAC</h4><p>Compromiso corporativo en cada despliegue y soporte.</p></div>
-    <div class="footer-block"><h4>Acceso rápido</h4><p><a href="https://wa.me/51990754196">WhatsApp</a> - <a href="tel:+51990754196">Teléfono</a> - <a href="mailto:jhon.4.palacios@gmail.com">Email</a></p></div>
-    <div class="footer-block"><h4>Confianza</h4><p>Data driven, SOPs auditables, consultoría premium.</p></div>
-  </div>
+
+
+
+    <!-- Botones de Contacto Animados -->
+    <section id="contacto">
+      <ul class="wrapper fade-up">
+        <a href="#" class="icon facebook">
+          <span class="tooltip">Facebook</span>
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="icon instagram">
+          <span class="tooltip">Instagram</span>
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/51990754196" class="icon whatsapp">
+          <span class="tooltip">WhatsApp</span>
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" class="icon youtube">
+          <span class="tooltip">YouTube</span>
+          <i class="fab fa-youtube"></i>
+        </a>
+      </ul>
+    </section>
+  </main>
+
+  <a class="fixed-whatsapp" href="https://wa.me/51990754196" target="_blank">
+    <i class="fab fa-whatsapp" style="color: white;"></i>
+  </a>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</div>
   <div style="text-align:center; padding: 12px 0; color: #5d7f9e; font-size: 0.88rem;">© 2026 SALDIVAR DIGITAL BOX SAC. Todos los derechos reservados.</div>
-</footer>
-
-<a class="fixed-whatsapp" href="https://wa.me/51990754196" target="_blank" aria-label="WhatsApp directo"><span>💬</span></a>
-
-<script>
-(function(){
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.2 });
-  document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
-})();
-
-const btnMenu = document.getElementById('btnMenu');
-const navLinks = document.getElementById('navLinks');
-btnMenu.addEventListener('click', () => {
-  const isOpen = navLinks.style.display === 'flex';
-  navLinks.style.display = isOpen ? 'none' : 'flex';
-  navLinks.style.flexDirection = 'column';
-  navLinks.style.position = 'absolute';
-  navLinks.style.top = '62px';
-  navLinks.style.right = '18px';
-  navLinks.style.background = 'rgba(255,255,255,0.94)';
-  navLinks.style.border = '1px solid rgba(112,148,184,0.3)';
-  navLinks.style.padding = '10px';
-  navLinks.style.borderRadius = '10px';
-});
-</script>
 </body>
+
 </html>
