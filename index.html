@@ -20,6 +20,7 @@
 
   <header>
     <nav class="navbar">
+      <!-- Bloque Izquierdo: Logo -->
       <div class="brand">
         <div class="logo-coded">
           <span class="top-text">SALDIVAR</span>
@@ -27,18 +28,16 @@
         </div>
       </div>
 
-      <!-- BOTÓN HAMBURGUESA (Solo se verá en móviles) -->
-      <button class="menu-toggle" id="menu-open" aria-label="Abrir menú">
+      <!-- Bloque Derecho: Botón Hamburguesa -->
+      <button class="menu-toggle" id="menu-open">
         <i class="fas fa-bars"></i>
       </button>
 
-      <!-- CONTENEDOR DE ENLACES -->
+      <!-- Menú Lateral (Se desliza desde la derecha) -->
       <div class="nav-links" id="nav-menu">
-        <!-- BOTÓN CERRAR (Solo se verá en móviles dentro del menú abierto) -->
-        <button class="menu-close" id="menu-close" aria-label="Cerrar menú">
+        <button class="menu-close" id="menu-close">
           <i class="fas fa-times"></i>
         </button>
-
         <a href="#Servicios">SERVICIOS</a>
         <a href="#Productos">PRODUCTOS</a>
         <a href="#Soporte">SOPORTE TÉCNICO</a>
@@ -281,23 +280,23 @@
 
 
 
-  <script>
+ <script>
     const navMenu = document.getElementById('nav-menu');
     const btnOpen = document.getElementById('menu-open');
     const btnClose = document.getElementById('menu-close');
     const links = document.querySelectorAll('.nav-links a');
 
-    // Al hacer clic en la hamburguesa, añadimos la clase 'active'
+    // Abrir
     btnOpen.addEventListener('click', () => {
         navMenu.classList.add('active');
     });
 
-    // Al hacer clic en la X, quitamos la clase 'active'
+    // Cerrar con la X
     btnClose.addEventListener('click', () => {
         navMenu.classList.remove('active');
     });
 
-    // Cierre automático: Al hacer clic en cualquier link, cerramos el menú
+    // Cerrar automáticamente al hacer clic en una opción
     links.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
