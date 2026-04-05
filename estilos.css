@@ -79,6 +79,12 @@ header {
     margin: 0 auto;
     padding: 5px 20px;
     min-height: 60px;
+    height: 80px;
+    background: white;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 .nav-links a {
@@ -227,14 +233,19 @@ header {
 }
 
 .section-title {
+    margin-top: 20px;
+    /* Espacio controlado respecto al menú */
+    margin-bottom: 30px;
+    /* Espacio respecto a las cajas de abajo */
     text-align: center;
-    margin-bottom: 40px;
 }
 
 .section-title h2 {
-    color: #152a4a;
-    font-size: 2rem;
-    margin-bottom: 10px;
+    margin: 0;
+    /* Quitamos margenes extraños */
+    padding: 0;
+    font-size: 2.5rem;
+    line-height: 1.2;
 }
 
 .grid3 {
@@ -369,68 +380,104 @@ header {
 .wrapper {
     display: flex;
     justify-content: center;
+    gap: 20px;
     list-style: none;
-    padding: 40px 0;
-    gap: 15px;
+    padding: 0;
 }
 
-.wrapper .icon {
+.icon {
     position: relative;
-    background: #fff;
+    background: #ffffff;
     border-radius: 50%;
-    width: 55px;
-    height: 55px;
+    padding: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     text-decoration: none;
     color: #333;
-    font-size: 20px;
 }
 
-.wrapper .tooltip {
+.icon .tooltip {
     position: absolute;
     top: 0;
     font-size: 14px;
-    background: #fff;
-    color: #fff;
-    padding: 5px 10px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
     border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     opacity: 0;
     pointer-events: none;
-    transition: 0.3s;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.wrapper .icon:hover .tooltip {
+.icon .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.icon:hover .tooltip {
     top: -45px;
     opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
-.facebook:hover,
-.facebook:hover .tooltip {
+/* --- COLORES ESPECÍFICOS POR ICONO --- */
+
+/* Facebook */
+.icon.facebook:hover,
+.icon.facebook:hover .tooltip,
+.icon.facebook:hover .tooltip::before {
     background: #1877F2;
-    color: #fff;
+    color: #ffffff;
 }
 
-.instagram:hover,
-.instagram:hover .tooltip {
+/* Instagram */
+.icon.instagram:hover,
+.icon.instagram:hover .tooltip,
+.icon.instagram:hover .tooltip::before {
     background: #E4405F;
-    color: #fff;
+    color: #ffffff;
 }
 
-.whatsapp:hover,
-.whatsapp:hover .tooltip {
+/* WhatsApp */
+.icon.whatsapp:hover,
+.icon.whatsapp:hover .tooltip,
+.icon.whatsapp:hover .tooltip::before {
     background: #25D366;
-    color: #fff;
+    color: #ffffff;
 }
 
-.youtube:hover,
-.youtube:hover .tooltip {
+/* YouTube */
+.icon.youtube:hover,
+.icon.youtube:hover .tooltip,
+.icon.youtube:hover .tooltip::before {
     background: #CD201F;
-    color: #fff;
+    color: #ffffff;
+}
+
+/* Llamada / Teléfono (NUEVO) */
+.icon.phone:hover,
+.icon.phone:hover .tooltip,
+.icon.phone:hover .tooltip::before {
+    background: #0804eb; /* Color azul cielo para llamadas */
+    color: #ffffff;
 }
 
 /* WHATSAPP FLOTANTE */
@@ -526,6 +573,7 @@ header {
 
 /* --- AJUSTES PARA MÓVIL (768px o menos) --- */
 @media (max-width: 768px) {
+
     /* Forzamos que la navbar sea un contenedor flexible */
     .navbar {
         display: flex;
@@ -551,14 +599,17 @@ header {
         flex-direction: column;
         position: fixed;
         top: 0;
-        right: -100%; /* Escondido por defecto */
+        right: -100%;
+        /* Escondido por defecto */
         width: 80%;
         height: 100vh;
         background: #f8fcff;
         justify-content: flex-start;
-        padding-top: 80px; /* Un poco menos de espacio arriba */
+        padding-top: 80px;
+        /* Un poco menos de espacio arriba */
         align-items: center;
-        gap: 5px; /* Espacio mínimo entre filas */
+        gap: 5px;
+        /* Espacio mínimo entre filas */
         transition: 0.4s ease-in-out;
         z-index: 10000;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
@@ -571,7 +622,8 @@ header {
 
     .nav-links a {
         font-size: 1.1rem;
-        padding: 15px 20px; /* Aumentamos el área de toque */
+        padding: 15px 20px;
+        /* Aumentamos el área de toque */
         width: 100%;
         text-align: center;
         text-decoration: none;
@@ -596,19 +648,23 @@ header {
 
 /* --- AJUSTES PARA ESCRITORIO (769px o más) --- */
 @media (min-width: 769px) {
-    .menu-toggle, .menu-close {
+
+    .menu-toggle,
+    .menu-close {
         display: none !important;
     }
 
     .nav-links {
         display: flex !important;
-        position: static !important; /* Volver a su lugar normal */
+        position: static !important;
+        /* Volver a su lugar normal */
         flex-direction: row !important;
         width: auto !important;
         height: auto !important;
         background: none !important;
         box-shadow: none !important;
-        gap: 20px; /* Espacio entre enlaces en PC */
+        gap: 20px;
+        /* Espacio entre enlaces en PC */
         padding-top: 0 !important;
     }
 
