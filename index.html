@@ -154,32 +154,40 @@
 
     /* Ajuste para celulares */
     @media (max-width: 768px) {
-    /* Forzamos a que el encabezado se apile verticalmente */
-    .navbar-custom, .navbar-refined {
+
+      /* Forzamos a que el encabezado se apile verticalmente */
+      .navbar-custom,
+      .navbar-refined {
         flex-direction: column !important;
         height: auto !important;
         padding: 15px 10px !important;
-    }
+      }
 
-    /* Aseguramos que el contenedor del menú sea visible */
-    .nav-links {
-        display: flex !important; /* Cambia a flex para que se vea */
+      /* Aseguramos que el contenedor del menú sea visible */
+      .nav-links {
+        display: flex !important;
+        /* Cambia a flex para que se vea */
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
         margin-top: 15px;
         width: 100%;
-    }
+      }
 
-    .nav-links a {
+      .nav-links a {
         font-size: 14px;
         padding: 5px 10px;
-    }
+      }
 
-    /* Ajustamos el logo en móvil para que no ocupe todo */
-    .logo-coded .top-text { font-size: 18px; }
-    .logo-coded .bottom-text { font-size: 20px; }
-}
+      /* Ajustamos el logo en móvil para que no ocupe todo */
+      .logo-coded .top-text {
+        font-size: 18px;
+      }
+
+      .logo-coded .bottom-text {
+        font-size: 20px;
+      }
+    }
 
     /* BOTONES */
     .btn-primary,
@@ -477,141 +485,159 @@
     }
 
     /* Contenedor Principal con Flexbox */
-.hero-container {
-    display: flex;
-    flex-wrap: wrap; /* Esto permite que el contenido baje en móviles */
-    align-items: center; /* Centra verticalmente imagen y texto */
-    justify-content: center;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-    gap: 50px; /* Espacio entre columnas */
-}
+    .hero-container {
+      display: flex;
+      flex-wrap: wrap;
+      /* Esto permite que el contenido baje en móviles */
+      align-items: center;
+      /* Centra verticalmente imagen y texto */
+      justify-content: center;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      gap: 50px;
+      /* Espacio entre columnas */
+    }
 
-/* Columna de la Imagen */
-.hero-visual {
-    flex: 1; /* Ocupa espacio proporcional */
-    min-width: 320px; /* Evita que se vea muy pequeña en móvil */
-    max-width: 500px; /* Evita que crezca demasiado en PC */
-}
+    /* Columna de la Imagen */
+    .hero-visual {
+      flex: 1;
+      /* Ocupa espacio proporcional */
+      min-width: 320px;
+      /* Evita que se vea muy pequeña en móvil */
+      max-width: 500px;
+      /* Evita que crezca demasiado en PC */
+    }
 
-.hero-visual img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    display: block;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
+    .hero-visual img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      display: block;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
 
-/* Columna del Texto */
-.hero-text-side {
-    flex: 1.2;
-    min-width: 320px;
-}
+    /* Columna del Texto */
+    .hero-text-side {
+      flex: 1.2;
+      min-width: 320px;
+    }
 
-.hero-text-side h2 {
-    color: #093479;
-    font-size: 2rem;
-    margin-bottom: 30px;
-    text-align: center; /* Centrado limpio vía CSS */
-}
+    .hero-text-side h2 {
+      color: #093479;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      text-align: center;
+      /* Centrado limpio vía CSS */
+    }
 
-/* Cajas de Información (Misión/Visión) */
-.info-box {
-    margin-bottom: 25px;
-    padding-left: 20px;
-    border-left: 4px solid #00d8ff; /* Línea cian distintiva */
-}
+    /* Cajas de Información (Misión/Visión) */
+    .info-box {
+      margin-bottom: 25px;
+      padding-left: 20px;
+      border-left: 4px solid #00d8ff;
+      /* Línea cian distintiva */
+    }
 
-.info-box h3 {
-    margin: 0 0 8px 0;
-    font-size: 1.2rem;
-    color: #333;
-    text-transform: uppercase;
-}
+    .info-box h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.2rem;
+      color: #333;
+      text-transform: uppercase;
+    }
 
-.info-box p {
-    margin: 0;
-    line-height: 1.6;
-    color: #555;
-    font-size: 1rem;
-    text-align: justify; /* Opcional: para que se vea más cuadrado como en tu captura */
-}
+    .info-box p {
+      margin: 0;
+      line-height: 1.6;
+      color: #555;
+      font-size: 1rem;
+      text-align: justify;
+      /* Opcional: para que se vea más cuadrado como en tu captura */
+    }
   </style>
 </head>
 
 <body>
 
-<header>
+  <header>
     <nav class="navbar"> <!-- Mantén el nombre de clase que ya tenías (ej. navbar) -->
-        
-        <!-- REEMPLAZA SOLO ESTA PARTE (EL LOGO) -->
-        <div class="brand">
-            <div class="logo-coded">
-                <span class="top-text">SALDIVAR</span>
-                <span class="bottom-text">DIGITAL BOX</span>
-            </div>
-        </div>
 
-        <!-- NO TOQUES EL RESTO DEL NAV (los enlaces), déjalos como estaban -->
-        <div class="nav-links">
-            <a href="#Servicios">Servicios</a>
-            <a href="#Productos">Productos</a>
-            <a href="#Soporte Técnico">Soporte Técnico</a>
-            <a href="#Contacto">Contacto</a>
+      <!-- REEMPLAZA SOLO ESTA PARTE (EL LOGO) -->
+      <div class="brand">
+        <div class="logo-coded">
+          <span class="top-text">SALDIVAR</span>
+          <span class="bottom-text">DIGITAL BOX</span>
         </div>
-        
+      </div>
+
+      <!-- NO TOQUES EL RESTO DEL NAV (los enlaces), déjalos como estaban -->
+      <div class="nav-links">
+        <a href="#Servicios">Servicios</a>
+        <a href="#Productos">Productos</a>
+        <a href="#Soporte Técnico">Soporte Técnico</a>
+        <a href="#Contacto">Contacto</a>
+      </div>
+
     </nav>
-</header>
+    <meta name="google-site-verification" content="K3-y9DVeUl8GEUSwT114HisD1T8v1LUsyIQw5F6H7W8" />
+  </header>
 
-<main>
-  <section class="hero-container">
-    <!-- IMAGEN AL LADO IZQUIERDO -->
-    <div class="hero-visual">
-      <img src="image_0.jpeg" alt="Saldivar Digital Box Tecnología">
-    </div>
-
-    <!-- DESCRIPCIÓN AL FRENTE (DERECHA) -->
-    <div class="hero-text-side">
-      <center>
-        <h2>Reseña Corporativa</h2>
-      </center>
-      <div class="info-box">
-        <p>Consultora especializada en el diseño, despliegue y gestión de ecosistemas tecnológicos críticos, orientada a potenciar la eficiencia operativa mediante la integración de infraestructura robusta y arquitecturas de software escalables.</p>
+  <main>
+    <section class="hero-container">
+      <!-- IMAGEN AL LADO IZQUIERDO -->
+      <div class="hero-visual">
+        <img src="image_0.jpeg" alt="Saldivar Digital Box Tecnología">
       </div>
 
-      <div class="info-box">
-        <h3>Nuestra Misión</h3>
-        <p>Suministrar soluciones de ingeniería de sistemas de alto rendimiento, enfocadas en la optimización de recursos computacionales y el endurecimiento de la postura de ciberseguridad de nuestros aliados, mediante la implementación de metodologías ágiles y tecnologías de vanguardia.</p>
-      </div>
+      <!-- DESCRIPCIÓN AL FRENTE (DERECHA) -->
+      <div class="hero-text-side">
+        <center>
+          <h2>RESEÑA CORPORATIVA</h2>
+        </center>
+        <div class="info-box">
+          <p>Consultora especializada en el diseño, despliegue y gestión de ecosistemas tecnológicos críticos, orientada
+            a potenciar la eficiencia operativa mediante la integración de infraestructura robusta y arquitecturas de
+            software escalables.</p>
+        </div>
 
-      <div class="info-box">
-        <h3>Nuestra Visión</h3>
-        <p>Consolidarnos como el partner tecnológico predilecto a nivel regional, distinguiéndonos por la excelencia técnica en la gestión de infraestructura híbrida y la provisión de soluciones disruptivas que impulsen la transformación digital sostenible de nuestros clientes.</p>
-      </div>
-    </div>
-  </section>
+        <div class="info-box">
+          <h3>Nuestra Misión</h3>
+          <p>Suministrar soluciones de ingeniería de sistemas de alto rendimiento, enfocadas en la optimización de
+            recursos computacionales y el endurecimiento de la postura de ciberseguridad de nuestros aliados, mediante
+            la implementación de metodologías ágiles y tecnologías de vanguardia.</p>
+        </div>
 
-  <!-- NUEVA SECCIÓN: PRIMERO SERVICIOS -->
+        <div class="info-box">
+          <h3>Nuestra Visión</h3>
+          <p>Consolidarnos como el partner tecnológico predilecto a nivel regional, distinguiéndonos por la excelencia
+            técnica en la gestión de infraestructura híbrida y la provisión de soluciones disruptivas que impulsen la
+            transformación digital sostenible de nuestros clientes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: PRIMERO SERVICIOS -->
     <section class="section" id="Servicios">
       <div class="container">
         <div class="section-title fade-up">
-          <h2>Servicios</h2>
-          <p>Pasa el puntero para descubrir más detalles.</p>
+          <h2>SERVICIOS</h2>
+          <!-- <p>Pasa el puntero para descubrir más detalles.</p> -->
         </div>
         <div class="interactive-grid fade-up">
 
-          <!-- SERVICIOS DE INGENIERÍA -->
+          <!-- DISEÑO DE PAGINAS WEB -->
           <div class="flip-card">
             <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <i class="fas fa-tools"></i>
-                <h3>Servicios de Ingeniería</h3>
+
+              <div class="flip-card-front card-desarrollo-web"> <i class="fas fa-sitemap"></i>
+                <h3>DISEÑO DE PAGINAS WEB A MEDIDA</h3>
               </div>
+
               <div class="flip-card-back">
-                <h3>Ingeniería Aplicada</h3>
-                <p>Optimización de procesos industriales, diseño de sistemas complejos y soporte técnico de alto nivel.
-                </p>
+                <h3>Arquitectura de Software Escalable</h3>
+                <p>Desarrollo full-stack de plataformas web modulares y responsivas, implementando patrones de diseño
+                  avanzados, optimización de algoritmos de frontend y backend, y asegurando alta disponibilidad y
+                  seguridad integrada en la capa de aplicación.</p>
               </div>
             </div>
           </div>
@@ -650,8 +676,8 @@
       </div>
     </section>
 
-   
-<!-- NUEVA SECCIÓN: SEGUNDO PRODUCTOS -->
+
+    <!-- NUEVA SECCIÓN: SEGUNDO PRODUCTOS -->
     <section class="section" id="Productos">
       <div class="container">
         <div class="section-title fade-up">
@@ -710,7 +736,7 @@
     </section>
 
 
-<!-- NUEVA SECCIÓN: TERCERO SOPORTE TÉCNICO -->
+    <!-- NUEVA SECCIÓN: TERCERO SOPORTE TÉCNICO -->
     <section class="section" id="Soporte Técnico">
       <div class="container">
         <div class="section-title fade-up">
@@ -768,7 +794,7 @@
       </div>
     </section>
 
-<!-- Otro tipo de menú -->
+    <!-- Otro tipo de menú -->
     <section class="section" id="servicios">
       <div class="container">
         <div class="section-title fade-up">
@@ -798,36 +824,36 @@
 
     <!-- Botones de Contacto Animados -->
     <section id="Contacto">
-    <center>
-      <h2>CONTACTO</h2>
-    </center>
-    <ul class="wrapper fade-up">
-    
-    <!-- Facebook -->
-    <a href="https://www.facebook.com" class="icon facebook" target="_blank" rel="noopener noreferrer">
-      <span class="tooltip">Facebook</span>
-      <i class="fab fa-facebook-f"></i>
-    </a>
+      <center>
+        <h2>CONTACTO</h2>
+      </center>
+      <ul class="wrapper fade-up">
 
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/" class="icon instagram" target="_blank" rel="noopener noreferrer">
-      <span class="tooltip">Instagram</span>
-      <i class="fab fa-instagram"></i>
-    </a>
+        <!-- Facebook -->
+        <a href="https://www.facebook.com" class="icon facebook" target="_blank" rel="noopener noreferrer">
+          <span class="tooltip">Facebook</span>
+          <i class="fab fa-facebook-f"></i>
+        </a>
 
-    <!-- WhatsApp -->
-    <a href="https://wa.me/51990754196" class="icon whatsapp" target="_blank" rel="noopener noreferrer">
-      <span class="tooltip">WhatsApp</span>
-      <i class="fab fa-whatsapp"></i>
-    </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/" class="icon instagram" target="_blank" rel="noopener noreferrer">
+          <span class="tooltip">Instagram</span>
+          <i class="fab fa-instagram"></i>
+        </a>
 
-    <!-- YouTube -->
-    <a href="https://www.youtube.com" class="icon youtube" target="_blank" rel="noopener noreferrer">
-      <span class="tooltip">YouTube</span>
-      <i class="fab fa-youtube"></i>
-    </a>
-  </ul>
-</section>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/51990754196" class="icon whatsapp" target="_blank" rel="noopener noreferrer">
+          <span class="tooltip">WhatsApp</span>
+          <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <!-- YouTube -->
+        <a href="https://www.youtube.com" class="icon youtube" target="_blank" rel="noopener noreferrer">
+          <span class="tooltip">YouTube</span>
+          <i class="fab fa-youtube"></i>
+        </a>
+      </ul>
+    </section>
   </main>
 
   <a class="fixed-whatsapp" href="https://wa.me/51990754196" target="_blank">
@@ -845,8 +871,9 @@
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
-</div>
-  <div style="text-align:center; padding: 12px 0; color: #5d7f9e; font-size: 0.88rem;">© 2026 SALDIVAR DIGITAL BOX SAC. Todos los derechos reservados.</div>
+  </div>
+  <div style="text-align:center; padding: 12px 0; color: #5d7f9e; font-size: 0.88rem;">© 2026 SALDIVAR DIGITAL BOX SAC.
+    Todos los derechos reservados.</div>
 </body>
 
 </html>
