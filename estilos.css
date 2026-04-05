@@ -1,0 +1,606 @@
+/* ==========================================================================
+   1. CONFIGURACIÓN GLOBAL (UNIFICADA PARA EVITAR ERRORES)
+   ========================================================================== */
+:root {
+    /* Combinación de todas tus variables sin repetir nombres */
+    --bg: #f8fcff;
+    --accent: #00cffe;
+    --text-old: #093479;
+    /* Mantengo la antigua por si acaso */
+    --panel: rgba(255, 255, 255, 0.75);
+    --glass: rgba(250, 253, 255, 0.85);
+    --line: #d8e5f2;
+    --text: #1f2d44;
+    /* Esta es la que definiste después */
+    --muted: #6f849f;
+    --border: rgba(112, 148, 184, 0.36);
+    --dark-blue: #093479;
+    /* Variable útil para tus títulos */
+}
+
+/* Reset Unificado */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo de Base Unificado (Combinando tus dos bloques body) */
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #f4f7f9;
+    color: #093479;
+    /* Mantenemos el color de texto principal */
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. ESTILOS DE FONDO Y ESTRUCTURA (SIN CAMBIOS)
+   ========================================================================== */
+
+/* CAPA DE FONDO: Cuadrícula y Circuitos */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(to right, rgba(209, 217, 230, 0.2) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(209, 217, 230, 0.2) 1px, transparent 1px);
+    background-size: 35px 35px;
+    z-index: -2;
+}
+
+main {
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20 h60 v60 h-60 z M50 20 v60 M20 50 h60 M90 20 l40 40 h50 M90 50 l40 40 h50 M20 100 h50 l30 30 h80 M20 130 h150 M150 100 v80 M120 130 v50 M180 20 v160' stroke='rgba(209, 217, 230, 0.4)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+    background-size: 280px 280px;
+    background-attachment: fixed;
+}
+
+/* ==========================================================================
+   3. HEADER Y NAVEGACIÓN (SIN CAMBIOS)
+   ========================================================================== */
+
+/* HEADER COMPACTO */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    background: var(--glass);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5px 20px;
+    min-height: 60px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #35516e;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: rgba(0, 207, 255, 0.1);
+    color: var(--accent);
+}
+
+/* ==========================================================================
+   4. SECCIÓN HERO (ESTRUCTURA Y ALINEACIÓN RESPETADA)
+   ========================================================================== */
+
+/* Contenedor Principal con Flexbox (Combinado y respetando tus valores) */
+.hero-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permitimos que baje en móviles */
+    align-items: center;
+    /* Centrado vertical */
+    justify-content: center;
+    /* Centrado horizontal global */
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 50px;
+    /* Espacio entre columnas */
+}
+
+/* Columna de la Imagen */
+.hero-visual {
+    flex: 1;
+    /* Ocupa espacio proporcional */
+    min-width: 320px;
+    /* Evita que sea muy pequeña en móvil */
+    max-width: 500px;
+    /* Evita que crezca demasiado en PC */
+    text-align: left;
+    /* Alineación interna de la imagen */
+}
+
+.hero-visual img {
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+    max-height: 900px;
+    object-fit: contain;
+    border-radius: 15px;
+    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.15));
+    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Columna del Texto */
+.hero-text-side {
+    flex: 1.2;
+    min-width: 320px;
+    text-align: left;
+    /* Alineación base del texto */
+}
+
+/* TÍTULO H2: ESTE ES EL QUE MANTENGO CENTRADO COMO PEDISTE */
+.hero-text-side h2 {
+    color: #093479;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    /* Respeto tu margen de 30px */
+    font-family: 'Arial Black', sans-serif;
+    text-align: center;
+    /* ¡AQUÍ ESTÁ TU CENTRADO! */
+}
+
+/* Cajas de Información (Misión/Visión) */
+.info-box {
+    margin-bottom: 25px;
+    padding-left: 20px;
+    /* Respeto tu padding de 20px */
+    border-left: 4px solid #00d8ff;
+}
+
+.info-box h3 {
+    font-size: 1.1rem;
+    color: #333;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    /* Respeto tu margen */
+}
+
+.info-box p {
+    font-size: 1rem;
+    color: #555;
+    /* Respeto tu color #555 */
+    line-height: 1.6;
+    margin: 0;
+    text-align: justify;
+    /* ¡AQUÍ ESTÁ TU JUSTIFICADO! */
+}
+
+/* ==========================================================================
+   5. BOTONES Y COMPONENTES (SIN CAMBIOS)
+   ========================================================================== */
+
+/* BOTONES */
+.btn-primary,
+.btn-secondary {
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00c7ff, #00a6d7);
+    color: #fff;
+}
+
+.btn-secondary {
+    background: #fff;
+    color: #007bae;
+    border: 1px solid #00b8f0;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 199, 255, 0.3);
+}
+
+/* SECCIONES Y CARDS ORIGINALES */
+.section {
+    padding: 60px 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: #152a4a;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.grid3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- ESTILOS ESPECÍFICOS PARA LA TARJETA CCTV (SIN CAMBIOS) --- */
+
+/* Fondo sutil y técnico para la cara frontal (Nodos de red/instalación) */
+.card-cctv {
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='1' fill='rgba(0, 216, 255, 0.2)'/%3E%3Ccircle cx='90' cy='10' r='1' fill='rgba(0, 216, 255, 0.2)'/%3E%3Ccircle cx='10' cy='90' r='1' fill='rgba(0, 216, 255, 0.2)'/%3E%3Ccircle cx='90' cy='90' r='1' fill='rgba(0, 216, 255, 0.2)'/%3E%3Cline x1='10' y1='10' x2='90' y2='10' stroke='rgba(0, 216, 255, 0.1)' stroke-width='1'/%3E%3Cline x1='10' y1='10' x2='10' y2='90' stroke='rgba(0, 216, 255, 0.1)' stroke-width='1'/%3E%3Cline x1='90' y1='10' x2='90' y2='90' stroke='rgba(0, 216, 255, 0.1)' stroke-width='1'/%3E%3Cline x1='10' y1='90' x2='90' y2='90' stroke='rgba(0, 216, 255, 0.1)' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 80px 80px;
+}
+
+/* Color y tamaño del icono para CCTV */
+.card-cctv i {
+    color: #093479;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+/* Estilo para la cara trasera técnico-profesional */
+.flip-card-back h3 {
+    color: var(--dark-blue, #093479);
+    margin-bottom: 10px;
+}
+
+.flip-card-back p {
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(0, 207, 255, 0.1);
+    color: #007bb7;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+/* ESTILOS NUEVOS: CUADROS INTERACTIVOS (FLIP EFFECT) (SIN CAMBIOS) */
+.interactive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.flip-card {
+    background-color: transparent;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid var(--border);
+}
+
+.flip-card-front {
+    background-color: #fff;
+    color: var(--text);
+}
+
+.flip-card-front i {
+    font-size: 4rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.flip-card-back {
+    background: linear-gradient(135deg, #093479, #00cffe);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back h3 {
+    margin-bottom: 10px;
+}
+
+.flip-card-back p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* ICONOS DE CONTACTO ANIMADOS (SIN CAMBIOS) */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 40px 0;
+    gap: 15px;
+}
+
+.wrapper .icon {
+    position: relative;
+    background: #fff;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+
+.wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+}
+
+.facebook:hover,
+.facebook:hover .tooltip {
+    background: #1877F2;
+    color: #fff;
+}
+
+.instagram:hover,
+.instagram:hover .tooltip {
+    background: #E4405F;
+    color: #fff;
+}
+
+.whatsapp:hover,
+.whatsapp:hover .tooltip {
+    background: #25D366;
+    color: #fff;
+}
+
+.youtube:hover,
+.youtube:hover .tooltip {
+    background: #CD201F;
+    color: #fff;
+}
+
+/* WHATSAPP FLOTANTE */
+.fixed-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1100;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+/* ANIMACIÓN */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease-out;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   6. DISEÑO DE LOGO REFORZADO (SIN CAMBIOS)
+   ========================================================================== */
+.logo-coded {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    font-family: 'Arial Black', sans-serif;
+    text-align: left;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.logo-coded .top-text {
+    font-size: 24px;
+    font-weight: 900;
+    color: #454545;
+    background: linear-gradient(to bottom, #757575 0%, #000000 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    display: block;
+}
+
+.logo-coded .bottom-text {
+    font-size: 26px;
+    font-weight: 900;
+    color: #00c7fe;
+    background: linear-gradient(to bottom, #00d8ff 0%, #093479 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+    display: block;
+}
+
+/* ==========================================================================
+   7. CONSULTAS DE MEDIOS (RESPONSIVE) (UNIFICADAS Y RESPETADAS)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* Forzamos a que el encabezado se apile verticalmente */
+    .navbar-custom,
+    .navbar-refined,
+    .navbar {
+        /* Añadimos tu navbar genérica aquí */
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 15px 10px !important;
+    }
+
+    /* Aseguramos que el contenedor del menú sea visible */
+    .nav-links {
+        display: flex !important;
+        /* Mantenemos tu forzado a flex */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    /* Ajustamos el logo en móvil */
+    .logo-coded .top-text {
+        font-size: 18px;
+    }
+
+    .logo-coded .bottom-text {
+        font-size: 20px;
+    }
+
+    /* Ajustes del Hero Cube (que estaba al final) */
+    .hero-cube img {
+        max-width: 300px;
+    }
+}
+
+/* --- ESTILOS MENÚ HAMBURGUESA --- */
+
+/* Ocultar botones de control en escritorio */
+/* Ajuste para que el botón de hamburguesa no se vea en PC */
+.menu-toggle, .menu-close {
+    display: none;
+    background: none;
+    border: none;
+    color: #093479;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* --- MÓVIL (768px o menos) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Aparece la hamburguesa */
+    }
+
+    .nav-links {
+        display: flex; /* Cambiamos de 'none' a 'flex' pero lo sacamos de la pantalla */
+        position: fixed;
+        top: 0;
+        right: -100%; /* Totalmente oculto a la derecha */
+        width: 100%;
+        height: 100vh;
+        background: #f8fcff; /* Color de fondo sólido para que no se trasluzca */
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        transition: 0.5s ease;
+        z-index: 9999;
+        box-shadow: -10px 0 20px rgba(0,0,0,0.2);
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+
+    /* Cuando el menú tiene la clase 'active', se desliza hacia adentro */
+    .nav-links.active {
+        right: 0;
+    }
+
+    .menu-close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .brand {
+        text-align: left; /* Asegura que el texto del logo se alinee a la izquierda */
+    }
+
+    /* El botón hamburguesa se alineará automáticamente a la derecha por el space-between */
+    .menu-toggle {
+        display: block;
+        order: 2; /* Opcional: asegura que sea el segundo elemento */
+    }
+}
